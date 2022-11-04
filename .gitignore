@@ -27,3 +27,7 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+/src/Dice.class
+/src/Main.class
+/src/YatzyEngine.class
+/src/YatzyGame.class
