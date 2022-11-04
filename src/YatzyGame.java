@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class YatzyGame {
@@ -23,15 +24,15 @@ public class YatzyGame {
 
     public int getGameNo(){return this.gameNo;}
 
-    public Integer[] getScores(){
+    public int[] getValues(){
         //1.Creating a stream from dice array
         Stream<Dice> sDice = Stream.of(this.dice);
 
         //Mapping getValue function to dice stream
-        Stream<Integer> sValues = sDice.map(Dice::getValue);
+        IntStream sValues = sDice.map(Dice::getValue).mapToInt(Integer::intValue);
 
         //return the stream as an array of integers
-        return sValues.toArray(Integer[]::new);
+        return sValues.toArray();
     }
 
     public void rollDice(){
@@ -42,9 +43,9 @@ public class YatzyGame {
     public static void main(String[] args) {
         YatzyGame play = new YatzyGame();
 
-        System.out.println("Current Scores: " + Arrays.toString(play.getScores()));
+        System.out.println("Current Scores: " + Arrays.toString(play.getValues()));
 
         play.rollDice();
-        System.out.println("Current Scores: " + Arrays.toString(play.getScores()));
+        System.out.println("Current Scores: " + Arrays.toString(play.getValues()));
     }
 }

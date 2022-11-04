@@ -8,6 +8,7 @@ public class Dice {
     private int value;
     private boolean kept;
     Random number = new Random();
+
     public Dice() {
         this.value = 1;
         this.kept = false;

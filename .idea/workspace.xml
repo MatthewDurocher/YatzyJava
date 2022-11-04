@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f5258dd-b7e6-4168-8148-f05d9d2f68d9" name="Changes" comment="updated .gitignore">
+    <list default="true" id="2f5258dd-b7e6-4168-8148-f05d9d2f68d9" name="Changes" comment="Implemented YatzyGame (game state)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/YatzyEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/YatzyEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/YatzyGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/YatzyGame.java" afterDir="false" />
     </list>
@@ -58,7 +57,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667522526305</updated>
-      <workItem from="1667522527607" duration="6765000" />
+      <workItem from="1667522527607" duration="11778000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1667522706544</created>
@@ -88,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667526012938</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Implemented YatzyGame (game state)">
+      <created>1667529349060</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1667529349060</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,6 +115,7 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="Implemented Dice class" />
     <MESSAGE value="updated .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated .gitignore" />
+    <MESSAGE value="Implemented YatzyGame (game state)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented YatzyGame (game state)" />
   </component>
 </project>
