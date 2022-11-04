@@ -23,8 +23,8 @@ public class Dice {
     }
 
     public void roll() {
-        this.value = number.nextInt(1,6);
-        System.out.println("Die rolled:" + value);
+        this.value = number.nextInt(1,7);
+        System.out.println("Die rolled: " + value);
     }
 
     public static void main(String[] args) {

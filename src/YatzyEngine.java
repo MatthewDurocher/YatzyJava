@@ -9,15 +9,20 @@ public class YatzyEngine {
     }
 
     private int sumDice() {
-        return Arrays.stream(this.game.getValues()).sum();
+        return this.game.getValues().sum();
     }
 
     public int scoreNo(int n){
-        int[] list = this.game.getValues());
 
-        int noCount = Collections.frequency(list, n);
-        int points = noCount * n;
+        int count = 0;
+
+        for (Integer i : this.game.getValues().toArray()){
+            if (i == n) {count++;}
+        }
+        int points = count * n;
+
         System.out.println("You scored: "+points+" pts");
+
         return points;
     };
 
@@ -26,7 +31,6 @@ public class YatzyEngine {
 
         Set<Integer> uniqueValues = new HashSet<>();
 
-        Arrays.stream(this.game.getValues()).forEach(uniqueValues::add);
 
         condition = (uniqueValues.size() <= 3);
 
@@ -72,13 +76,19 @@ public class YatzyEngine {
     public static void main(String[] args) {
         YatzyEngine play = new YatzyEngine();
 
-        System.out.println(Arrays.toString(play.game.getValues()));
+        System.out.println(Arrays.toString(play.game.getValues().toArray()));
+
         play.game.rollDice();
-        System.out.println(Arrays.toString(play.game.getValues()));
 
-        System.out.println(play.scoreNo(1));
+        System.out.println("Sum of dice values: " + play.sumDice());
 
-        System.out.println(play.scoreNo(6));
+        System.out.println(Arrays.toString(play.game.getValues().toArray()));
+
+        System.out.println("Scoring Ones:");
+        play.scoreNo(1);
+
+        System.out.println("Scoring Sixes:");
+        play.scoreNo(6);
 
     }
 

@@ -24,15 +24,14 @@ public class YatzyGame {
 
     public int getGameNo(){return this.gameNo;}
 
-    public int[] getValues(){
+    public IntStream getValues(){
         //1.Creating a stream from dice array
         Stream<Dice> sDice = Stream.of(this.dice);
 
         //Mapping getValue function to dice stream
-        IntStream sValues = sDice.map(Dice::getValue).mapToInt(Integer::intValue);
 
         //return the stream as an array of integers
-        return sValues.toArray();
+        return sDice.map(Dice::getValue).mapToInt(Integer::intValue);
     }
 
     public void rollDice(){
@@ -43,9 +42,9 @@ public class YatzyGame {
     public static void main(String[] args) {
         YatzyGame play = new YatzyGame();
 
-        System.out.println("Current Scores: " + Arrays.toString(play.getValues()));
+        System.out.println("Current Scores: " + Arrays.toString(play.getValues().toArray()));
 
         play.rollDice();
-        System.out.println("Current Scores: " + Arrays.toString(play.getValues()));
+        System.out.println("Current Scores: " + Arrays.toString(play.getValues().toArray()));
     }
 }
