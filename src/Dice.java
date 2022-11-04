@@ -5,25 +5,25 @@
 import java.util.Random;
 
 public class Dice {
-    int value;
-    boolean kept;
+    private int value;
+    private boolean kept;
     Random number = new Random();
     public Dice() {
         this.value = 1;
         this.kept = false;
     }
 
-    private int getValue() {
+    int getValue() {
         return this.value;
     }
 
-    private boolean isKept(){
+    boolean isKept(){
         return this.kept;
     }
 
     public void roll() {
         this.value = number.nextInt(1,6);
-        System.out.println("Die rolled:" + value + "\n");
+        System.out.println("Die rolled:" + value);
     }
 
     public static void main(String[] args) {
