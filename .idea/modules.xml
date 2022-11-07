@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/YatzyJava.iml" filepath="$PROJECT_DIR$/YatzyJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/diceroller/diceroller.iml" filepath="$PROJECT_DIR$/diceroller/diceroller.iml" />
     </modules>
   </component>
 </project>
