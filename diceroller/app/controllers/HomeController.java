@@ -30,11 +30,9 @@ public class HomeController extends Controller {
         return ok("{\"appname\":\"diceroller\",\"version\":\"v0.1.0\"}").as("application/json");
     }
     public Result roll() {
-        int newRoll = ThreadLocalRandom.current().nextInt(1,7);
+        int newRoll = ThreadLocalRandom.current().nextInt(0,7);
 
-        String jsonTemplate = "{\"value\":%s}";
-
-        String jsonResult = String.format(jsonTemplate, newRoll);
+        String jsonResult = String.format("{\"value\":%s}", newRoll);
 
         return ok(jsonResult).as("application/json");
     }
