@@ -27,7 +27,7 @@ public class HomeController extends Controller {
     }
 
     public Result version() {
-        return ok("{\"appname\":\"diceroller\",\"version\":\"v0.1.0\"}");
+        return ok("{\"appname\":\"diceroller\",\"version\":\"v0.1.0\"}").as("application/json");
     }
     public Result roll() {
         int newRoll = ThreadLocalRandom.current().nextInt(1,7);
@@ -36,7 +36,7 @@ public class HomeController extends Controller {
 
         String jsonResult = String.format(jsonTemplate, newRoll);
 
-        return ok(jsonResult);
+        return ok(jsonResult).as("application/json");
     }
 
     public Result rollMany(int n) {
@@ -51,7 +51,7 @@ public class HomeController extends Controller {
 
         String jsonResult = String.format(jsonTemplate, Arrays.toString(diceRolls));
 
-        return ok(jsonResult);
+        return ok(jsonResult).as("application/json");
     }
 
 }
