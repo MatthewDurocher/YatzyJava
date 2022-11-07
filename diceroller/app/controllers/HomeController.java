@@ -3,6 +3,7 @@ package controllers;
 import play.mvc.*;
 import play.twirl.api.Html;
 
+import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -34,6 +35,21 @@ public class HomeController extends Controller {
         String jsonTemplate = "{\"value\":%s}";
 
         String jsonResult = String.format(jsonTemplate, newRoll);
+
+        return ok(jsonResult);
+    }
+
+    public Result rollMany(int n) {
+        int[] diceRolls = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            int newRoll = ThreadLocalRandom.current().nextInt(1, 7);
+            diceRolls[i] = newRoll;
+        }
+
+        String jsonTemplate = "{\"value\":%s}";
+
+        String jsonResult = String.format(jsonTemplate, Arrays.toString(diceRolls));
 
         return ok(jsonResult);
     }
