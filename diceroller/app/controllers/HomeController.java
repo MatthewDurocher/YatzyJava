@@ -3,6 +3,8 @@ package controllers;
 import play.mvc.*;
 import play.twirl.api.Html;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 /**
  * This controller contains an action to handle HTTP requests
  * to the application's home page.
@@ -25,6 +27,15 @@ public class HomeController extends Controller {
 
     public Result version() {
         return ok("{\"appname\":\"diceroller\",\"version\":\"v0.1.0\"}");
+    }
+    public Result roll() {
+        int newRoll = ThreadLocalRandom.current().nextInt(1,7);
+
+        String jsonTemplate = "{\"value\":%s}";
+
+        String jsonResult = String.format(jsonTemplate, newRoll);
+
+        return ok(jsonResult);
     }
 
 }
