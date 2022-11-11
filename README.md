@@ -49,8 +49,8 @@ ipconfig #Look for your IPv4
 
 In your application.conf file, add a statement to enable the whitelist tag `anyhost`.
 
-```diff
-+play.filters.hosts.routeModifiers.whiteList = [anyhost]
+```scala
+play.filters.hosts.routeModifiers.whiteList = [anyhost]
 ```
 
 Now you can use this tag to specify exactly which routes your app is allowed to serve. 
@@ -73,8 +73,8 @@ play.filters.hosts {allowed = ["localhost", ".local", "127.0.0.1"]}
 
 In our application.conf, we can override it and add the public ip of our server:
 
-```diff
-+play.filters.hosts {allowed = ["localhost", ".local", "127.0.0.1", "192.168.0.42"]}
+```scala
+play.filters.hosts {allowed = ["localhost", ".local", "127.0.0.1", "192.168.0.42"]}
 ```
 
 you can also add domain names and specific ports if needed. 
