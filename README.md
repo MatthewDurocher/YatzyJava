@@ -6,13 +6,16 @@ Yatzy web-app implemented using Java and Java Play Framework (WIP)
 
 > Learned using [Play 2.8.x docs](https://www.playframework.com/documentation/2.8.x/AllowedHostsFilter#Allowed-hosts-filter)
 
-To allow remote devices to make HTTP requests, you need to 'allow' you host machine to accept them. 
-The behaviour settings of your SBT server can be declared within the [conf/application.conf](./diceroller/conf/application.conf).
 
-Whatever settings you specify in application.conf will override the default settings (that exist somewhere in the classpath).
-An example of these defaults can be found [here](https://www.playframework.com/documentation/2.8.x/resources/confs/filters-helpers/reference.conf).
+By default, your app is in a 'no solicitors' mode where it is only allowed to serve requests from `localhost` or `127.0.0.1`.
+This means that only the computer running the app can make a request to the app, even if your port `:9000` is technically open. 
 
-By default, your app is only allowed to serve all requests from `localhost` or `127.0.0.1`. This means that only the computer running the app can make a request to the app, even if your port `:9000` is technically open. 
+If you want to allow your SBT server to serve remote HTTP requests, you'll need to allow it to respond to requests sent to your public IP address. 
+
+The behaviour settings of your SBT server can be declared within the [conf/application.conf](./diceroller/conf/application.conf)
+
+Whatever settings you specify in your `application.conf` file will override the default settings (found somewhere in the classpath).
+An example of these defaults can be found here : [example reference.conf](https://www.playframework.com/documentation/2.8.x/resources/confs/filters-helpers/reference.conf)
 
 There are two easy ways to make you server available on LAN. Either way, you will need your server's local IP address
 in order to send a request.
