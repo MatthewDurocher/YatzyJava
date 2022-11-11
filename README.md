@@ -33,10 +33,10 @@ ipconfig #Look for your IPv4
 
 ### AllowedHosts - Per Route
 
-In your conf file, specify the whitelist tag `anyhost`.
+In your application.conf file, add a statement to enable the whitelist tag `anyhost`.
 
-```scala
-play.filters.hosts.routeModifiers.whiteList = [anyhost]
+```diff
++play.filters.hosts.routeModifiers.whiteList = [anyhost]
 ```
 
 Now you can use this tag to specify exactly which routes your app is allowed to serve. 
@@ -45,6 +45,7 @@ Now you can use this tag to specify exactly which routes your app is allowed to 
 +anyhost
 GET    /                            controllers.HomeController.index()
 
+# This route is still localhost only
 GET    /version                     controllers.HomeController.version()
 ```
 
@@ -58,8 +59,8 @@ play.filters.hosts {allowed = ["localhost", ".local", "127.0.0.1"]}
 
 In our application.conf, we can override it and add the public ip of our server:
 
-```scala
-play.filters.hosts {allowed = ["localhost", ".local", "127.0.0.1", "192.168.0.42"]}
+```diff
++play.filters.hosts {allowed = ["localhost", ".local", "127.0.0.1", "192.168.0.42"]}
 ```
 
 you can also add domain names and specific ports if needed. 
