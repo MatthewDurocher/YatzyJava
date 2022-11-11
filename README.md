@@ -1,5 +1,6 @@
 # Demo Java Play Framework 
 
+Yatzy web-app implemented using Java and Java Play Framework (WIP)
 
 ## LAN testing with Allowed Hosts 
 
@@ -47,6 +48,19 @@ GET    /                            controllers.HomeController.index()
 GET    /version                     controllers.HomeController.version()
 ```
 
+## AllowedHosts - Per IP
 
+The default setting in the reference.conf file is
 
+```scala
+play.filters.hosts {allowed = ["localhost", ".local", "127.0.0.1"]}
+```
+
+In our application.conf, we can override it and add the public ip of our server:
+
+```scala
+play.filters.hosts {allowed = ["localhost", ".local", "127.0.0.1", "192.168.0.42"]}
+```
+
+you can also add domain names and specific ports if needed. 
 
