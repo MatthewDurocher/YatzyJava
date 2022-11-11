@@ -2,6 +2,17 @@
 
 Yatzy web-app implemented using Java and Java Play Framework (WIP)
 
+## What's with JavaPlay?
+
+It's open-source!
+
+Uses the SBT SBT (*Scala Build Tool*) which:
+
+- Builds and tests your app
+- Runs a server
+- Compiles changes on the fly - just refresh your browser :) 
+- Integrates well with the IntelliJ IDE. 
+
 ## LAN testing with Allowed Hosts 
 
 > Learned using [Play 2.8.x docs](https://www.playframework.com/documentation/2.8.x/AllowedHostsFilter#Allowed-hosts-filter)
