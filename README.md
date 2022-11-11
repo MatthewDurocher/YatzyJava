@@ -11,8 +11,12 @@ The behaviour settings of your SBT server can be declared within the [conf/appli
 Whatever settings you specify in application.conf will override the default settings (that exist somewhere in the classpath).
 An example of these defaults can be found [here](https://www.playframework.com/documentation/2.8.x/resources/confs/filters-helpers/reference.conf).
 
+By default, your app is only allowed to serve all requests from `localhost` or `127.0.0.1`. This means that only the computer running the app can make a request to the app, even if your port `:9000` is technically open. 
+
 There are two easy ways to make you server available on LAN. Either way, you will need your server's local IP address
 in order to send a request.
+
+### Knowing your IP
 
 On macOS terminal
 
@@ -26,9 +30,23 @@ On windows command line:
 ipconfig #Look for your IPv4 
 ```
 
+### AllowedHosts - Per Route
 
+In your conf file, specify the whitelist tag `anyhost`.
+
+```scala
+play.filters.hosts.routeModifiers.whiteList = [anyhost]
 ```
-In [conf/routes](./diceroller/conf/routes)
 
+Now you can use this tag to specify exactly which routes your app is allowed to serve. 
 
+```diff
++anyhost
+GET    /                            controllers.HomeController.index()
+
+GET    /version                     controllers.HomeController.version()
 ```
+
+
+
+
