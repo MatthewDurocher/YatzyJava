@@ -3,10 +3,13 @@
 # ~~~~
 
 # An example controller showing a sample home page
+
 GET    /                            controllers.HomeController.index()
 GET    /version                     controllers.HomeController.version()
 GET    /tutorial/html               controllers.HomeController.applyHtml()
 GET    /roll                        controllers.HomeController.roll()
+
++anyhost
 GET    /roll/:n                     controllers.HomeController.rollMany(n: Int)
 
 # Map static resources from the /public folder to the /assets URL path
